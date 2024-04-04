@@ -143,6 +143,7 @@
   font-size: 16px;
   cursor: pointer;
   border-radius: 5px;
+  z-index: 2;
 }
 
 /* Menu Styling */
@@ -152,7 +153,7 @@
   top: -10px;
   left: 1000px; /* Define initial position */
   width: 500px;
-  background-color: rgba(0, 0, 199, 1);
+  background-color: rgb(0, 0, 84);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   padding: 10px;
   border-radius: 5px;
@@ -197,4 +198,122 @@
   color: white;
   font-size: 20px;
   cursor: pointer;
+}
+/* -----------------TEAMS -------------------*/
+.header {
+  width: 1470px;
+  height: 350px;
+  margin-left: -8px;
+  margin-top: -8px;
+  z-index: 0;
+  background-color: darkblue;
+}
+
+.body {
+  position: absolute;
+  top: 350px;
+  width: 1470px;
+  height: 850px;
+  margin-left: -8px;
+  margin-top: -8px;
+  z-index: 0;
+  background-color: rgb(255, 255, 255);
+}
+
+.heading {
+  position: absolute;
+  top: 240px;
+  left: 110px;
+  font-size: 100px;
+  font-family: "Didot", serif;
+  color: rgb(255, 255, 255, 1);
+  z-index: 2;
+  animation: fade-in 1s forwards ;
+  }
+
+.frame {
+  position: absolute;
+  border-right: 1px solid darkgray;
+  height: 350px;
+  width: 300px;
+}
+
+#frame1 {
+  top: 490px;
+  left: 200px;
+}
+
+#frame2 {
+  top: 490px;
+  left: 600px;
+}
+
+.team-pic {
+  position: absolute;
+  height: 270px;
+  width: 250px;
+  animation: fade-in 3s forwards;
+}
+
+#pic1 {
+  top: 560px;
+  left: 180px;
+}
+
+#pic2 {
+  top: 560px;
+  left: 980px;
+}
+
+#pic3 {
+  top: 560px;
+  left: 580px;
+}
+
+.titles {
+  position: absolute;
+  font-size: 20px;
+  font-weight: 400;
+  font-family: "Helvetica Neue", serif;
+  color: rgb(80, 80, 80, 1);
+  animation: fade-in 3s forwards;
+}
+
+#title1 {
+  top: 480px;
+  left: 180px;
+}
+
+#title2 {
+  top: 480px;
+  left: 580px;
+}
+
+#title3 {
+  top: 480px;
+  left: 980px;
+}
+
+.sub-titles {
+  position: absolute;
+  font-size: 15px;
+  font-weight: 200;
+  font-family: "Helvetica Neue", serif;
+  color: rgb(80, 80, 80, 1);
+  animation: fade-in 3s forwards;
+}
+
+#s-title1 {
+  top: 510px;
+  left: 180px;
+}
+
+#s-title2 {
+  top: 510px;
+  left: 580px;
+}
+
+#s-title3 {
+  top: 510px;
+  left: 980px;
 }
