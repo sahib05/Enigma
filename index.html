@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Enigma</title>
+    <style>
+      /* Container styles */
+      .image-container {
+        position: relative;
+      }
+
+      /* Styles for the banner image */
+      .banner {
+        width: 1470px;
+        height: 910px;
+        margin-left: -8px;
+        margin-top: -8px;
+      }
+
+      /* Styles for the logo image */
+      .logo {
+        position: absolute;
+        top: 20px; /* Adjust as needed */
+        left: 5px; /* Adjust as needed */
+        width: 120px;
+        height: 120px;
+      }
+      .translucent-rectangle {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 1470px;
+        height: 910px;
+        margin-left: -8px;
+        margin-top: -8px;
+        background-color: rgba(
+          22,
+          22,
+          117,
+          0.6
+        ); /* Adjust the last value (alpha channel) to change the transparency */
+      }
+
+      .centre-text {
+        position: absolute;
+        top: 320px;
+        left: 10px;
+        color: white;
+        font-size: 70px;
+        text-align: center;
+        font-family: "Helvetica Neue", serif;
+        font-weight: 200;
+        width: 100%; /* Set a fixed width */
+        animation: fade-in 3s forwards;
+      }
+
+      .upper-text {
+        position: absolute;
+        top: 270px;
+        left: 0px;
+        color: white;
+        font-size: 25px;
+        text-align: center;
+        font-family: "Helvetica Neue", serif;
+        font-weight: 100;
+        width: 100%; /* Set a fixed width */
+        animation: fade-in 1s forwards;
+      }
+
+      .bottom-text {
+        position: absolute;
+        top: 550px;
+        left: 10px;
+        color: white;
+        font-size: 15px;
+        text-align: center;
+        font-family: "Helvetica Neue", serif;
+        font-weight: 100;
+        width: 100%; /* Set a fixed width */
+        animation: fade-in 1s forwards ;
+      }
+
+      .arrow {
+        position: absolute;
+        top:740px;
+        left:40px;
+          }
+
+      .line {
+        position: absolute;
+        top: 0;
+        left: 700px;
+        width: 1px; /* Thickness of the line */
+        height: 100px; /* Initial height of the line */
+        background-color: white; /* Color of the line */
+        animation: shrink-grow 1s infinite alternate; /* Animation for line height */
+      }
+
+      .arrowhead {
+        position: absolute;
+        top:50px;
+        left: 692px;
+        width: 15px; /* Width of the arrowhead */
+        height: 15px; /* Height of the arrowhead */
+        border-top: 2px solid rgb(255, 255, 255); /* Top edge of the arrowhead */
+        border-right: 2px solid white; /* Right edge of the arrowhead */
+        transform: rotate(135deg);
+      }
+
+      @keyframes shrink-grow {
+        from {
+          height: 60px;
+        }
+        to {
+          height: 0;
+        }
+      }
+
+
+      @keyframes fade-in {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      /* Additional styles */
+    </style>
+  </head>
+  <body>
+    <div class="image-container">
+      <img class="banner" src="images/Enigma banner.jpg" alt="" />
+      <div class="translucent-rectangle"></div>
+      <img
+        class="logo"
+        src="images/Untitled_design-removebg-preview.png"
+        alt=""
+      />
+    </div>
+    </div>
+
+    <div class="arrow">
+        <div class="line"></div>
+        <div class="arrowhead"></div>
+    </div>
+    
+
+    <div class="text-container">
+      <div class="text upper-text">We are Enigma.</div>
+      <div class="text centre-text">
+        A <b>New Generation</b> of<br />Equity Research
+      </div>
+      <p class="text bottom-text">
+        Advanced Technology - Robust Research - Successful Investments
+      </p>
+    </div>
+    <div class="arrow-container">
+    
+  </body>
+</html>
