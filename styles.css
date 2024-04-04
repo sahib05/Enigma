@@ -1,0 +1,200 @@
+.image-container {
+  position: relative;
+}
+
+/* Styles for the banner image */
+.banner {
+  width: 1470px;
+  height: 910px;
+  margin-left: -8px;
+  margin-top: -8px;
+}
+
+/* Styles for the logo image */
+.logo {
+  position: absolute;
+  top: 20px; /* Adjust as needed */
+  left: 5px; /* Adjust as needed */
+  width: 120px;
+  height: 120px;
+}
+.translucent-rectangle {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 1470px;
+  height: 910px;
+  margin-left: -8px;
+  margin-top: -8px;
+  background-color: rgba(
+    22,
+    22,
+    117,
+    0.6
+  ); /* Adjust the last value (alpha channel) to change the transparency */
+}
+
+.centre-text {
+  position: absolute;
+  top: 320px;
+  left: 10px;
+  color: white;
+  font-size: 70px;
+  text-align: center;
+  font-family: "Helvetica Neue", serif;
+  font-weight: 200;
+  width: 100%; /* Set a fixed width */
+  animation: fade-in 3s forwards;
+}
+
+.upper-text {
+  position: absolute;
+  top: 270px;
+  left: 0px;
+  color: white;
+  font-size: 25px;
+  text-align: center;
+  font-family: "Helvetica Neue", serif;
+  font-weight: 100;
+  width: 100%; /* Set a fixed width */
+  animation: fade-in 1s forwards;
+}
+
+.bottom-text {
+  position: absolute;
+  top: 550px;
+  left: 10px;
+  color: white;
+  font-size: 15px;
+  text-align: center;
+  font-family: "Helvetica Neue", serif;
+  font-weight: 100;
+  width: 100%; /* Set a fixed width */
+  animation: fade-in 1s forwards;
+}
+
+.arrow {
+  position: absolute;
+  top: 740px;
+  left: 40px;
+}
+
+.line {
+  position: absolute;
+  top: 0;
+  left: 700px;
+  width: 1px; /* Thickness of the line */
+  height: 100px; /* Initial height of the line */
+  background-color: white; /* Color of the line */
+  animation: shrink-grow 1s infinite alternate; /* Animation for line height */
+}
+
+.arrowhead {
+  position: absolute;
+  top: 50px;
+  left: 692px;
+  width: 15px; /* Width of the arrowhead */
+  height: 15px; /* Height of the arrowhead */
+  border-top: 2px solid rgb(255, 255, 255); /* Top edge of the arrowhead */
+  border-right: 2px solid white; /* Right edge of the arrowhead */
+  transform: rotate(135deg);
+}
+
+@keyframes shrink-grow {
+  from {
+    height: 60px;
+  }
+  to {
+    height: 0;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Adjust the transparency here */
+  z-index: 1; /* Ensure overlay is on top of everything */
+  display: none; /* Initially hide the overlay */
+}
+
+.menu-button {
+  position: absolute;
+  top: 20px;
+  left: 1375px;
+  background-color: rgb(0, 0, 0, 0); /* Green */
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* Menu Styling */
+.menu {
+  display: none;
+  position: absolute;
+  top: -10px;
+  left: 1000px; /* Define initial position */
+  width: 500px;
+  background-color: rgba(0, 0, 199, 1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  border-radius: 5px;
+  height: 100vh;
+  transition: width 5s ease-in-out; /* Apply transition here */
+  z-index: 2;
+}
+
+.menu ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.menu ul li {
+  padding: 40px 0;
+}
+
+.menu ul li a {
+  color: rgb(255, 255, 255, 1);
+  text-decoration: none;
+  font-family: "Helvetica Neue", serif;
+  font-weight: 100;
+  font-size: 40px;
+}
+
+.menu ul li a:hover {
+  font-weight: 200;
+}
+
+/* Show menu when button is clicked */
+
+.menu-active {
+  left: 1000px; /* Adjust as needed */
+  display: block;
+}
+.close-button {
+  position: absolute;
+  top: 50px;
+  left: 410px; /* Adjust the position of the X button */
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
