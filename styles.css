@@ -1,37 +1,64 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
 .image-container {
   position: relative;
+  width: 100%;
 }
 
 /* Styles for the banner image */
 .banner {
-  width: 1470px;
-  height: 910px;
-  margin-left: -8px;
-  margin-top: -8px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* Cover full width of the container */
+  height: 100vh; /* Adjust height based on viewport height */
+  /* Ensures the image covers the area, might crop if necessary */
+}
+
+.translucent-rectangle {
+  position: absolute;
+
+  width: 100%; /* Width matches the banner exactly */
+
+  /* Semi-transparent blue overlay */
+}
+
+#transrec1 {
+  top: 0;
+  left: 0;
+  height: 100vh; /* Height matches the banner */
+  background-color: rgba(22, 22, 117, 0.6);
+}
+
+#transrec2 {
+  top: 1100px;
+  left: 0;
+  height: 102vh;
+  background-color: antiquewhite;
+}
+
+#transrec3 {
+  top: 2900px;
+  left: 0;
+  height: 102vh;
+  background-color: antiquewhite;
 }
 
 /* Styles for the logo image */
 .logo {
   position: absolute;
-  top: 20px; /* Adjust as needed */
-  left: 5px; /* Adjust as needed */
-  width: 120px;
-  height: 120px;
-}
-.translucent-rectangle {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  width: 1470px;
-  height: 910px;
-  margin-left: -8px;
-  margin-top: -8px;
-  background-color: rgba(
-    22,
-    22,
-    117,
-    0.6
-  ); /* Adjust the last value (alpha channel) to change the transparency */
+  top: 1.2vh;
+  left: 1vw;
+  width: 10vw;
+  height: auto;
+  z-index: 1;
 }
 
 .centre-text {
@@ -75,14 +102,16 @@
 
 .arrow {
   position: absolute;
-  top: 740px;
-  left: 40px;
+  top: 670px;
+  left: 50%; /* Start from the middle horizontally */
+  transform: translateX(-50%); /* Shift it back to the left by half its width */
 }
 
 .line {
   position: absolute;
   top: 0;
-  left: 700px;
+  left: 50%; /* Center horizontally */
+  transform: translateX(0px); /* Adjust this value if the line width changes */
   width: 1px; /* Thickness of the line */
   height: 100px; /* Initial height of the line */
   background-color: white; /* Color of the line */
@@ -92,12 +121,12 @@
 .arrowhead {
   position: absolute;
   top: 50px;
-  left: 692px;
+  left: 50%; /* Center horizontally */
+  transform: translateX(-7.5px) rotate(135deg); /* Adjust translateX to half of arrowhead's width and rotate */
   width: 15px; /* Width of the arrowhead */
   height: 15px; /* Height of the arrowhead */
   border-top: 2px solid rgb(255, 255, 255); /* Top edge of the arrowhead */
   border-right: 2px solid white; /* Right edge of the arrowhead */
-  transform: rotate(135deg);
 }
 
 @keyframes shrink-grow {
@@ -132,7 +161,7 @@
 .menu-button {
   position: absolute;
   top: 20px;
-  left: 1375px;
+  left: 90%;
   background-color: rgb(0, 0, 0, 0); /* Green */
   border: none;
   color: white;
@@ -157,7 +186,7 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   padding: 10px;
   border-radius: 5px;
-  height: 100vh;
+  height: 99vh;
   transition: width 5s ease-in-out; /* Apply transition here */
   z-index: 2;
 }
@@ -199,6 +228,122 @@
   font-size: 20px;
   cursor: pointer;
 }
+
+.line-para {
+  position: absolute;
+  width: 70px;
+  border-top: 1px solid lightgrey;
+}
+
+#line1 {
+  top: 1350px;
+  left: 0px;
+}
+
+#line2 {
+  top: 2250px;
+  left: 650px;
+}
+
+#line3 {
+  top: 3150px;
+  left: 0px;
+}
+
+.indexing {
+  position: absolute;
+  color: rgb(200, 200, 200);
+  font-size: 90px;
+  font-weight: 500;
+  font-family: "Didot", serif;
+}
+
+#num1 {
+  top: 1290px;
+  left: 100px;
+}
+
+#num2 {
+  top: 2190px;
+  left: 750px;
+}
+
+#num3 {
+  top: 3090px;
+  left: 100px;
+}
+
+.sub-head {
+  position: absolute;
+
+  color: rgb(20, 20, 20, 0.8);
+  font-size: 40px;
+  font-weight: 100;
+  font-family: "Didot", serif;
+}
+#sub-head0 {
+  font-size: 70px;
+  top: 930px;
+  left: 29%;
+}
+
+#sub-head1 {
+  top: 1400px;
+  left: 100px;
+}
+
+#sub-head2 {
+  top: 2300px;
+  left: 750px;
+}
+
+#sub-head3 {
+  top: 3200px;
+  left: 100px;
+}
+
+.main-content {
+  position: absolute;
+  color: rgb(150, 150, 150, 1);
+  font-size: 20px;
+  font-family: "Helvetica Neue", serif;
+}
+
+#mc1 {
+  top: 1480px;
+  left: 100px;
+}
+
+#mc2 {
+  top: 2380px;
+  left: 750px;
+}
+
+#mc3 {
+  left: 100px;
+  top: 3280px;
+}
+.content-img {
+  position: absolute;
+
+  height: 850px;
+  width: 670px;
+}
+
+#img1 {
+  top: 1100px;
+  left: 800px;
+}
+
+#img2 {
+  top: 2000px;
+  left: 0px;
+}
+
+#img3 {
+  top: 2900px;
+  left: 800px;
+}
 /* -----------------TEAMS -------------------*/
 .header {
   width: 1470px;
@@ -207,6 +352,10 @@
   margin-top: -8px;
   z-index: 0;
   background-color: darkblue;
+}
+
+#contact-header {
+  background-color: black;
 }
 
 .body {
@@ -227,9 +376,16 @@
   font-size: 100px;
   font-family: "Didot", serif;
   color: rgb(255, 255, 255, 1);
-  z-index: 2;
-  animation: fade-in 1s forwards ;
-  }
+  z-index: 0;
+  animation: fade-in 1s forwards;
+}
+
+#contact-heading {
+  position: absolute;
+  top: 260px;
+  left: 610px;
+  font-size: 60px;
+}
 
 .frame {
   position: absolute;
@@ -317,3 +473,165 @@
   top: 510px;
   left: 980px;
 }
+
+/*--------------- Contact ---------------------*/
+
+body {
+  font-family: "Ariel", sans-serif;
+  font-weight: 100;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4; /* Light gray background */
+}
+form {
+  position: absolute;
+  top: 400px;
+  left: 850px;
+  width: 400px; /* Adjust width as needed */
+
+  padding: 20px;
+  /* Soft shadow for modern look */
+  border-radius: 8px; /* Rounded corners for the form */
+}
+.form-group {
+  margin-bottom: 20px; /* Spacing between form groups */
+}
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #333;
+}
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px; /* Rounded corners for inputs and textarea */
+  box-sizing: border-box;
+  transition: border 0.3s; /* Smooth transition for focus border */
+}
+input[type="text"]:focus,
+textarea:focus {
+  border-color: #0056b3; /* Blue border on focus */
+}
+textarea {
+  height: 100px;
+  resize: vertical; /* Allow vertical resizing */
+}
+.email-button {
+  width: 100%;
+  padding: 10px;
+  background-color: black; /* Bootstrap blue */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.email-button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+.top-heading {
+  position: absolute;
+  top: 130px;
+  left: 270px;
+  font-size: 80px;
+  font-family: "Didot", serif;
+  color: rgb(255, 255, 255, 1);
+  z-index: 0;
+  animation: fade-in 1s forwards;
+}
+
+.contact-content {
+  position: absolute;
+  top: 450px;
+  left: 70px;
+  font-family: "Helvetica Neue", serif;
+  font-weight: 300;
+  line-height: 2;
+}
+
+a.custom-link {
+  color: rgb(0, 0, 200, 1); /* Sets the link color */
+  text-decoration: none; /* Removes underline */
+  transition: color 0.3s; /* Smooth transition for color change */
+}
+
+/* Hover state for the link */
+a.custom-link:hover {
+  color: #0056b3; /* Changes color on hover */
+}
+
+/* Focus state for the link, useful for accessibility */
+a.custom-link:focus {
+  outline: none; /* Removes the outline */
+  color: #003875; /* Darker blue for focus */
+}
+
+/****************************REPORTS*******************************************/
+
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+.pdf-list {
+  position: absolute;
+  top: 500px;
+  left: 0px;
+  list-style-type: none;
+  z-index: 1;
+}
+.pdf-item {
+  margin-bottom: 10px;
+}
+
+.report-block {
+  height: 100px;
+  width: 100%;
+}
+
+#report1 {
+  background-color: rgb(255, 253, 208, 1);
+  position: absolute;
+  top: 450px;
+  left: 11px;
+
+  z-index: 0;
+}
+
+#report2 {
+  background-color: rgb(211, 211, 211, 1);
+  position: absolute;
+  top: 550px;
+  left: 11px;
+
+  z-index: 0;
+}
+#report3 {
+  background-color: rgb(255, 253, 208, 1);
+  position: absolute;
+  top: 650px;
+  left: 11px;
+
+  z-index: 0;
+}
+
+#header-reports {
+  position: absolute;
+  height: 150px;
+  background-color: black;
+  left: 8px;
+  top: 0px;
+  z-index: 0;
+}
+
+#heading-reports {
+  position: absolute;
+  top: 30px;
+  left: 30%;
+}
+
+
+

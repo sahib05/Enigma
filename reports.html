@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
+  </head>
+  <body>
+    
+    <img
+      class="logo"
+      src="images/Untitled_design-removebg-preview.png"
+      alt=""
+    />
+    <div class="header" id="header-reports"></div>
+    <button class="menu-button" onclick="toggleMenu()">
+      <i class="bi bi-list h6"></i>
+    </button>
+    <nav class="menu" >
+      <button class="close-button" onclick="toggleMenuOff()">
+        <i class="bi bi-x-lg"></i>
+      </button>
+      <!-- Move the X button inside the nav -->
+      <ul>
+        <li><a href="index.html"> Home</a></li>
+        <li><a href="reports.html"> Reports</a></li>
+        <li><a href="#"> News and Events</a></li>
+        <li><a href="teams.html"> Leadership</a></li>
+        <li><a href="#"> Positions</a></li>
+        <li><a href="contact.html"> Contact</a></li>
+      </ul>
+    </nav>
+    <script src="script.js"></script>
+
+    <div class="heading" id="heading-reports">Our Research</div>
+    <ul id="pdfList" class="pdf-list"></ul>
+
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-storage-compat.js"></script>
+
+
+    <div class="overlay" id="overlay"></div>
+ 
+    <div class="circle" id="circle1">
+    <div class="box" id="box1">
+    <div class="circle" id="circle2">
+     
+
+    <script>
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyD9PRVrLK1W8F50ikCYKXuI6xydrNjhJ0c",
+        authDomain: "enigma-fd4da.firebaseapp.com",
+        projectId: "enigma-fd4da",
+        storageBucket: "enigma-fd4da.appspot.com",
+        messagingSenderId: "164910130773",
+        appId: "1:164910130773:web:9d2549e9e40e53718116dc",
+        measurementId: "G-EZB1VC6R4F",
+      };
+
+      const customTextForPDFs = {
+        "Crowdstrike Report.pdf": "Crowdstrike Security Report 2024",
+        // Add more entries here, for example:
+        // 'Another Report.pdf': 'Custom Text for Another Report'
+      };
+
+      // Initialize Firebase
+      const app = firebase.initializeApp(firebaseConfig);
+      const storage = firebase.storage();
+
+      function listPDFs() {
+        const listRef = storage.ref().child("pdfs/");
+
+        // Find all the prefixes and items.
+        listRef
+          .listAll()
+          .then((res) => {
+            res.items.forEach((itemRef) => {
+              // All the items under listRef.
+              displayPDFLink(itemRef);
+            });
+          })
+          .catch((error) => {
+            console.error("Error fetching PDFs: ", error);
+          });
+      }
+
+      function displayPDFLink(pdfRef) {
+        pdfRef
+          .getDownloadURL()
+          .then((url) => {
+            const pdfList = document.getElementById("pdfList");
+            const listItem = document.createElement("li");
+            listItem.className = "pdf-item";
+
+            // Get custom text or default to file name
+            const linkText = customTextForPDFs[pdfRef.name] || pdfRef.name;
+
+            listItem.innerHTML = `<a href="${url}" target="_blank">${linkText}</a>`;
+            pdfList.appendChild(listItem);
+          })
+          .catch((error) => {
+            console.error("Error displaying PDF link: ", error);
+            fetchImageForPDF(pdfRef.name, listItem.querySelector(".pdf-logo"));
+          })
+          .catch((error) => {
+            console.error("Error displaying PDF link: ", error);
+          });
+      }
+
+      function fetchImageForPDF(pdfName, imgElement) {
+        const imageName = pdfName.replace('.pdf', '') + '.png'; // Assuming your image names match PDF names
+        const imageRef = storage.ref(`logos/${imageName}`);
+        imageRef.getDownloadURL().then((url) => {
+          imgElement.src = url;
+          imgElement.style.width = '50px'; // Set image size
+          imgElement.style.height = '50px'; // Set image size
+        }).catch((error) => {
+          console.error("Error fetching image: ", error);
+          imgElement.src = 'default-image.png'; // Optional: a default image if the specific one fails to load
+        });
+      } 
+
+      // Call listPDFs to load PDFs
+      window.onload = listPDFs;
+    </script>
+  </body>
+</html>

@@ -5,13 +5,15 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm5y+2Or5I8VE7zIbre8HM+fc" crossorigin="anonymous">
-
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>  
   </head>
   <body>
     <div class="overlay" id="overlay"></div>
     <div class="image-container">
       <img class="banner" src="images/Enigma banner.jpg" alt="" />
-      <div class="translucent-rectangle"></div>
+      <div class="translucent-rectangle" id="transrec1"></div>
+      
       <img
         class="logo"
         src="images/Untitled_design-removebg-preview.png"
@@ -39,14 +41,39 @@
     <nav class="menu" id="menu">
         <button class="close-button" onclick="toggleMenuOff()"><i class ="bi bi-x-lg"></i></button> <!-- Move the X button inside the nav -->
       <ul>
-        <li><a href="#"> Home</a></li>
-        <li><a href="#"> Reports</a></li>
+        <li><a href="index.html"> Home</a></li>
+        <li><a href="reports.html"> Reports</a></li>
         <li><a href="#"> News and Events</a></li>
-        <li><a href="teams.html"> Team</a></li>
+        <li><a href="teams.html"> Leadership</a></li>
         <li><a href="#"> Positions</a></li>
-        <li><a href="#"> Contact</a></li>
+        <li><a href="contact.html"> Contact</a></li>
       </ul>
     </nav>
     <script src="script.js"></script>
+    <div class="translucent-rectangle" id="transrec2"></div>
+    <div class="translucent-rectangle" id="transrec3"></div>
+    <div class="sub-head" id="sub-head0" data-aos="fade-up">Investment Strategy</div>
+  <div class="line-para" id="line1" data-aos="fade-left"></div>
+  <div class="indexing" id="num1" data-aos="zoom-in">01</div>
+  <div class="sub-head" id="sub-head1" data-aos="fade-up">Our Research</div>
+  <div class="main-content" id="mc1" data-aos="fade-right">[Your content here]</div>
+  <img class="content-img" id="img1" src="images/research_image.jpeg" alt="" data-aos="flip-left">
+  <div class="line-para" id="line2" data-aos="fade-right"></div>
+  <div class="indexing" id="num2" data-aos="zoom-in">02</div>
+  <div class="sub-head" id="sub-head2" data-aos="fade-up">Our Technology</div>
+  <div class="main-content" id="mc2" data-aos="fade-left">[Your content here]</div>
+  <img class="content-img" id="img2" src="images/skyscrapper_2.jpeg" alt="" data-aos="flip-right">
+  <div class="line-para" id="line3" data-aos="fade-left"></div>
+  <div class="indexing" id="num3" data-aos="zoom-in">03</div>
+  <div class="sub-head" id="sub-head3" data-aos="fade-up">Our Goal</div>
+  <div class="main-content" id="mc3" data-aos="fade-right">[Your content here]</div>
+  <img class="content-img" id="img3" src="images/mountain.webp" alt="" data-aos="flip-left">
+    <script>
+      AOS.init({
+        duration: 1200, // values from 0 to 3000, with step 50ms
+        delay: -50, // values from 0 to 3000, with step 50ms
+        once: true, // whether animation should happen only once - while scrolling down
+      });
+    </script>
   </body>
 </html>
